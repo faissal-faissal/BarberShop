@@ -1,0 +1,936 @@
+/*  -------   GENERAL  -------  */
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Lato', sans-serif; */
+}
+
+html {
+    font-size: 10px;
+    background: #f7f7f7;
+}
+
+/*  -----   HEADER  -----   */
+
+.menu-nav {
+    width: 100%;
+    height: 10rem;
+    background-color: #f0Ead6;
+    clip-path: polygon(0 0, 100% 0, 100% 70%,55% 70%, 50% 90%, 45% 70%, 0% 70%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    transition: all 0.4s ease-in-out;
+    animation: apparitionNav 1.5s ease-in;
+}
+
+@keyframes apparitionNav {
+    from {
+        transform: translateY(-40px);
+        opacity : 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.liste-nav {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    z-index: 200;
+    position: fixed;
+}
+
+.lien-nav {
+    text-decoration: none;
+    color: #333;    
+}
+
+.item-nav {
+    padding: 1rem 4rem;
+    font-family: 'Kaushan script';
+    font-size: 3rem;
+    z-index: 300;
+}
+
+.item1 {
+    animation: apparitionItem1 2s ease-in;
+}
+
+.item2 {
+    animation: apparitionItem2 2s ease-in;
+    animation-delay: 0.2s;
+
+}
+
+.item3 {
+    animation: apparitionItem3 2s ease-in;
+    animation-delay: 0.4s;
+}
+
+.item4 {
+    animation: apparitionItem4 2s ease-in;
+    animation-delay: 0.6s;
+}
+
+@keyframes apparitionItem1 {
+    from {
+        transform: translateY(-40px);
+        opacity : 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes apparitionItem2 {
+    from {
+        transform: translateY(-40px);
+        opacity : 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes apparitionItem3 {
+    from {
+        transform: translateY(-40px);
+        opacity : 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes apparitionItem4 {
+    from {
+        transform: translateY(-40px);
+        opacity : 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.item-nav:active {
+    font-size: 4rem;
+}
+
+.hamburger {
+    width : 4rem;
+    height: 4rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 400;
+    background-color: #f0Ead6;
+    cursor: pointer;
+    display: none;
+}
+
+/* .item-nav a::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background: #f1f1f1;
+} */
+
+@media screen and (max-width: 750px) {
+    .hamburger {
+        display: block;
+    }
+
+    .liste-nav {
+        position: relative;
+        display: none;
+        flex-direction: column;
+        z-index: 300;
+        background-color: #f0Ead6;
+        width: 100%;
+    }
+
+    .item-nav {
+        height: auto;
+        z-index: 400;
+        text-align: center;
+        border-bottom: 1px solid #d1b96b;
+        line-height: 6.5rem;
+    }
+
+    .item-nav:nth-child(1) {
+        margin-top: 7rem;
+    }
+
+    .menu-nav.active {
+        clip-path: none;
+    }
+
+    .liste-nav.active {
+        display: block;
+    }
+}
+
+/*  ------  ACCUEIL ------  */
+
+.main-menu {
+    width: 100%;
+    height: 100vh;
+    background: url('images/imgBackground.jpg') center;
+    background-size: cover;
+}
+
+.main-menu h1 {
+    font-family: 'Kaushan script';
+    font-size: 11rem;
+    color: #f7f7f7;
+    position: relative;
+    top: 33%;
+    text-align: center;
+    animation: apparitionH1 5s ease-in-out;
+}
+
+@keyframes apparitionH1 {
+    from {
+        opacity: 0;
+        /* transform: translateY(-20px); */
+    }
+    to {
+        /* transform: translateY(0px); */
+        opacity: 1;
+    }
+}
+
+.main-menu h2 {
+    text-align: center;
+    font-size: 5rem;
+    position: relative;
+    top: 38%;
+    color: #f7f7f7;
+    font-family: 'Abril Fatface';
+    animation: apparitionH2 5s ease-in-out;
+}
+
+@keyframes apparitionH2 {
+    from {
+        opacity: 0;
+        /* transform: translateY(-20px); */
+    }
+    to {
+        /* transform: translateY(0px); */
+        opacity: 1;
+    }
+}
+
+.icon {
+    text-decoration: none;
+    color: rgb(39, 36, 36);
+    display: block;
+    cursor: pointer;
+    margin: 0rem auto;
+    width: 8rem;
+    height: 8rem;
+    background: #f1f1f1;
+    font-size: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 8rem;
+    box-shadow: 0 0 0 1rem #333;
+    animation: pulse 1.3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    to {
+        box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.01);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .main-menu h1 {
+        font-size: 9rem;
+    }
+}  
+
+@media screen and (max-width: 1000px) {
+    .main-menu {
+        height: 90vh;
+    }
+    .main-menu h1 {
+        font-size: 7rem;
+    }
+
+    .main-menu h2 {
+        font-size: 4rem;
+    }
+
+    .icon {
+        top: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-menu h1 {
+        font-size: 6rem;
+    }
+
+    .main-menu h2 {
+        font-size: 3rem;
+    }
+
+    .icon {
+        width: 6rem;
+        height: 6rem;
+        line-height: 6rem;
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main-menu {
+        height: 80vh;
+    }
+    .main-menu h1 {
+        font-size: 4.5rem;
+    }
+    .main-menu h2 {
+        font-size: 2.5rem;
+    }
+    .icon {
+        top: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main-menu h1 {
+        font-size: 3.5rem;
+    }
+    .main-menu h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-menu h1 {
+        font-size: 2.5rem;
+    }
+    .main-menu h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/*  -----   Section VALEURS -----   */
+
+.valeurs {
+    max-width: 114rem;
+    margin: 0 auto;
+    height: 60rem;
+    background: #f7f7f7;
+}
+
+.valeurs h2 {
+    padding-top: 8rem;
+    font-size: 4rem;
+    background-image: linear-gradient(to right, #373737, #c0b283);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    color: transparent;
+    text-align: center;
+    margin-bottom: 5rem;
+    letter-spacing: .2rem;
+    font-weight: 700;
+}
+
+.texteImage {
+    display: flex;
+    justify-content: center;
+}
+
+.description {
+    width: 50rem;
+    height: auto;
+    padding: 5rem;
+}
+
+.description h3 {
+    font-size: 1.9rem;
+    padding-bottom: 2rem;
+}
+
+.description p {
+    font-family: sans-serif;
+    font-size: 1.9rem;
+    padding-bottom: 2rem;
+}
+
+.imgSuperpose {
+    width: 40%;
+    padding: 3rem;
+    margin-right: 5rem;
+}
+
+.image-item {
+    position: relative;
+    padding: 1rem;
+    width: 30rem;
+    height: auto;
+    text-align: center;
+}
+
+.imgSuperpose img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.6);
+}
+
+.imgSuperpose .image-item:nth-child(2) {
+    position: relative;
+    top: -17rem;
+    left: 23rem;
+}
+
+.imgSuperpose .image-item:nth-child(3) {
+    position: relative;
+    top: -30rem;
+    left: 11rem;
+}
+
+.image-item:hover {
+    transform: scale(1.2);
+    outline: 1rem solid #c0b283;
+    transition: all 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.imgSuperpose:hover .image-item:not(:hover) {
+    transform: scale(0.95);
+}
+
+@media screen and (max-width: 1150px) {
+    .texteImage {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .description  {
+        width: 50%;
+        padding: 0px;
+        justify-content: flex-start;
+
+    }
+
+    .imgSuperpose {
+        width:49%;
+        height: 45rem;
+        justify-content: flex-end;
+
+    }
+
+    .imgSuperpose .image-item:nth-child(1) {
+        width: calc(25rem + 5%);
+        position: relative;
+        top: -5%;
+
+    }
+    .imgSuperpose .image-item:nth-child(2) {
+        width: calc(25rem + 5%);
+        position: relative;
+        top: -45%;
+        left: 45%;
+    }
+    .imgSuperpose .image-item:nth-child(3) {
+        width: calc(25rem + 5%);
+        position: relative;
+        top: -80%;
+        left: 23%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .valeurs {
+        height: auto;
+    }
+    .valeurs h2 {
+        font-size: 3.5rem;
+        padding-top: 4rem;
+        margin-bottom: 3rem;
+    }
+    .texteImage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .description {
+        width: 450px;
+    }
+/* 
+    .description p {
+        width: 50%;
+
+    }  */
+
+    .imgSuperpose {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        align-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .imgSuperpose .image-item:nth-child(1) {
+        width: 25rem;
+        position: relative;
+        top: 0;
+        left: 7rem;
+    }
+
+    .imgSuperpose .image-item:nth-child(2) {
+        width: 25rem;
+        position: relative;
+        top: -1rem;
+        left: 0;
+        z-index: 2;
+    }
+
+    .imgSuperpose .image-item:nth-child(3) {
+        width: 25rem;
+        position: relative;
+        top: 0;
+        left: -7rem;
+    }
+
+    .valeurs{
+        padding-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .description {
+        width: 100%;
+    }
+    .valeurs h2 {
+        font-size: 2.5rem;
+    }
+    .description h3 {
+        font-size: 1.5rem;
+    }
+    .description p {
+        font-size: 1.5rem;
+    }
+} 
+
+/*  -----   Section TARIFS -----   */
+
+.tarifs {
+    width: 100%;
+    height: auto;
+    background: #f7f7f7;
+    border-top: 1px dashed #c0b283;
+}
+
+.tarifs h3 {
+    font-family: 'Abril Fatface';
+    font-size: 5.5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    font-weight: lighter;
+    background-image: linear-gradient(to right, #000000, rgb(255,239,185));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;}
+
+.carte {
+    display: flex;
+    justify-content: center;
+}
+
+.carteTarifs {
+    width: 25rem;
+    height: auto;
+    margin: 2rem;
+    border: 1px dotted black;
+    background: #F0Ead6;
+    color: #333;
+}
+
+.carteTarifs:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/* .carteTarifs:nth-child(2):hover {
+    .carteTarifs ul {
+        border-bottom: 1px solid #f7f7f7;
+    }
+} */
+
+
+.carteTarifs h4 {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Abril Fatface';
+    font-weight: lighter;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.carteTarifs:nth-child(2) {
+    color: #FFD700;
+    background: #333;
+}
+
+/* .carteTarifs:nth-child(2):hover li{
+    outline: 1px solid #FFD700;
+} */
+
+.carteTarifs ul {
+    list-style: none;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.item-coupe {
+    padding-bottom: 4rem;
+}
+
+.item-coupe:nth-last-child(1) {
+    font-family: 'Abril Fatface';
+    font-size: 5rem;
+    padding-bottom: 2rem;
+}
+
+
+@media screen and (max-width: 700px) {
+    .carte {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarifs h3 {
+        font-size: 3.5rem;
+    }
+    .carteTarifs h4 {
+        font-size: 2.5rem;
+    }
+    .carteTarifs ul {
+        font-size: 1.7rem;
+    }
+    .item-coupe:nth-last-child(1) {
+        font-size: 3rem;
+    }
+}
+
+/*  -----   Section texte-defilant    -----   */
+
+.texte-defilant {
+    margin-top: 10rem;
+    width: 100%;
+    height:60rem;
+    background: url(images/sectionBg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.texte-dynamique {
+    width: 60%;
+    height: 60%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(125,125,125,0.4);
+}
+
+.texte {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f1f1f1;
+    font-size: 8rem;
+    /* line-height: 8rem; */
+    text-align: center;
+    display: block;
+    height: 10rem;
+    overflow: hidden;
+}
+
+.element {
+    line-height: 10rem;
+    animation: passage 8s infinite;
+}
+
+/* .texte::before {
+    content: '"Exceptionnel"';
+    animation: passage 8s infinite;
+} */
+
+@keyframes passage {
+    0%, 20% {
+        transform: translateY(0);   
+    }
+    25%,45% {
+        transform: translateY(-10rem);   
+    }
+    50%, 70% {
+        transform: translateY(-20rem);   
+    }
+    75%, 95% {
+        transform: translateY(-30rem);   
+    }
+    100% {
+        transform: translateY(-40rem);   
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .texte {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .texte {
+        font-size: 4rem;
+    }
+    .texte-dynamique {
+        width: 80%;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .texte {
+        font-size: 3rem;
+    }
+    .texte-dynamique {
+        width: 90%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .texte {
+        font-size: 2rem;
+    }
+    .texte-dynamique {
+        width: 95%;
+        height: 30%;
+    }
+}
+/*  -----   Section Team    -----  */
+
+.team {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px dashed #d1b96b;
+    text-align: center;
+    padding-bottom: 10rem;
+}
+
+.team h4 {
+    margin-top: 5rem;
+    font-size: 6rem;
+    background-image: linear-gradient(to right, #000000, rgb(255,239,185));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.team p {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.img-team {
+    width: 100%;
+    height: auto;
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.member {
+    width: 35rem;
+    height: 50rem;
+    margin: 1rem 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+}
+
+.member1 {
+    background: url(images/barber1.jpg) center no-repeat;
+    background-size: cover;
+    background-position: 30% 15%;
+}
+
+.member2 {
+    background: url(images/barber2.jpg) center no-repeat;
+    background-size: cover;
+    transform: scale(1.7);
+    /* background-position: 50% 10%; */
+}
+
+.member3 {
+    background: url(images/barber3.jpg) center no-repeat;
+    background-size: cover;
+    transform: scale(1.7);
+}
+
+.member1:hover {
+    transform: scale(1.5);
+    transition: all 0.4s ease-in-out;
+}
+
+.member2:hover {
+    transform: scale(2.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.member3:hover {
+    transform: scale(2.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.name-member {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0%;
+    background: rgb(211,203,178);
+    z-index: 100;
+}
+
+.name-member h5 {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.name-member p {
+    font-size: 1.5rem;
+    padding-top: 0;
+    margin-top: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+
+@media screen and (max-width:1350px) {
+    .img-team {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .team h4 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .team h4 {
+        font-size: 4rem;
+    }
+    .member {
+        height: 40rem;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .team h4 {
+        font-size: 3rem;
+    }
+    .member {
+        height: 35rem;
+    }
+}
+
+
+/*  -----   Section Contact -----   */
+
+.contact {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.contact h4 {
+    padding-top: 10rem;
+    font-size: 10rem;
+}
+
+.contact p {
+    padding: 5rem 4rem 3rem;
+    font-size: 6rem;
+    background-image: linear-gradient(to right, #373737, #c0b283);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+    
+.symbole {
+    font-size: 10rem;
+    padding: 4rem 4rem;
+}
+
+@media screen and (max-width:1350px) {
+    .contact h4 {
+        font-size: 8rem;
+    }
+    .contact p {
+        font-size: 5rem;
+    }
+    .symbole {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .contact h4 {
+        font-size: 6rem;
+    }
+    .contact p {
+        font-size: 4rem;
+    }
+    .symbole {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .contact h4 {
+        font-size: 5rem;
+    }
+    .contact p {
+        font-size: 3rem;
+    }
+    .symbole {
+        font-size: 4rem;
+    }
+}
